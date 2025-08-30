@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 1st Month Muskaan 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 90%;
+      animation: pop 1s ease;
+    }
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    h1 {
+      color: #ff4d6d;
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #333;
+      margin: 15px 0;
+    }
+    .btn {
+      background: #ff4d6d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #e63e5c;
+    }
+    .hidden-message {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #444;
+      display: none;
+      animation: fade 1s ease;
+      text-align: center;
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .images {
+      margin: 20px 0;
+    }
+    .images img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .note {
+      font-size: 1.2rem;
+      color: #ff4d6d;
+      margin-top: 15px;
+      font-style: italic;
+    }
+    .poem-block {
+      margin: 20px 0;
+      padding: 12px;
+      background: #fff5f7;
+      border-radius: 10px;
+      line-height: 1.6;
+    }
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      color: rgba(255, 77, 109, 0.7);
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Happy 1st Month, Muskaan 💖</h1>
+    <p>One month with you feels like magic ✨<br>
+       Thank you for filling my life with smiles 💕</p>
+
+    <div class="images">
+      <img src="1.png" alt="rose">
+      <img src="2.png" alt="couple">
+      <img src="3.png" alt="heart">
+    </div>
+
+    <p class="note">🌸 You are my Gift from God 🌸</p>
+
+    <button class="btn" onclick="showMessage()">Click for a surprise 💌</button>
+
+    <div class="hidden-message" id="hiddenMsg">
+      <div class="poem-block">
+        "Aap meri duaon ka woh hissa ho,<br>
+        Jo Allah ke noor mein likha gaya ho.<br>
+        Har din jo guzra, ik nayi dua bani,<br>
+        Aap ke saath har pal ek ibadat si bani."
+      </div>
+
+      <div class="poem-block">
+        "Aap meri rooh ki tasalli ho,<br>
+        Aap meri duaon ka jawab ho.<br>
+        Duniya chahe le le imtihan jitne bhi,<br>
+        Meri jeet bas Aap ka saath ho."
+      </div>
+
+      <div class="poem-block">
+        "Aap meri khamoshi ka sabse gehra raaz ho,<br>
+        Har aansoon ka sabse khoobsurat andaaz ho.<br>
+        Agar mohabbat ek aag hai, to main jalta rahoon,<br>
+        Bas Aap ka zikr ho, aur main mit-ta rahoon."
+      </div>
+
+      <div class="poem-block">
+        "Aap ki hansi gulabon ki khushboo hai,<br>
+        Jo rooh ko nayi roshni deti hai.<br>
+        Jahan log sirf chaand ko dekhte hain,<br>
+        Mujhe Aap mein poori kaynaat dikhti hai."
+      </div>
+
+      <div class="poem-block">
+        "Saath ek saal ka nahi, ek zindagi ka wada hai,<br>
+        Har din mohabbat ka naya aalam hai.<br>
+        Jo bhi guzra, ek dua banke guzra,<br>
+        Aur jo aayega, sirf Aap ka inaam hai."
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('hiddenMsg').style.display = 'block';
+    }
+
+    // Create floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 600);
+  </script>
+</body>
+</html>
