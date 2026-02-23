@@ -1,6 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Hania</title>
+    <style>
+        :root {
+            --soft-pink: #fbc2eb;
+            --warm-lavender: #a6c1ee;
+            --deep-rose: #d81b60;
+            --white: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--soft-pink), var(--warm-lavender));
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+        }
+
+        /* Floating Background Hearts */
+        .bg-heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.6);
+            user-select: none;
+            pointer-events: none;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(110vh) scale(0.5); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+
+        .card {
+            background: var(--white);
+            padding: 50px 30px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            text-align: center;
+            max-width: 350px;
+            width: 85%;
+            position: relative;
+            z-index: 10;
+            animation: cardFadeIn 1.5s ease;
+        }
+
+        @keyframes cardFadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* The Animated Heartbeat */
+        .heartbeat-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .main-heart {
+            font-size: 80px;
+            color: var(--deep-rose);
+            display: inline-block;
+            animation: pulse 1.2s infinite;
+            filter: drop-shadow(0 0 10px rgba(216, 27, 96, 0.3));
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.25); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+
+        h1 {
+            color: var(--deep-rose);
+            font-size: 2.2rem;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .message {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        /* The Secret Button */
+        .secret-btn {
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            color: white;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 175, 189, 0.4);
+            transition: 0.3s;
+            outline: none;
+        }
+
+        .secret-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 175, 189, 0.6);
+        }
+
+        #hidden-note {
+            display: none;
+            margin-top: 20px;
+            color: var(--deep-rose);
+            font-style: italic;
+            font-size: 0.95rem;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="heartbeat-container">
+            <div class="main-heart">❤</div>
+        </div>
+
+        <div class="subtitle">Especially For</div>
+        <h1>Hania</h1>
+        
+        <p class="message">
+            "My heartbeat sounds like your name. Whenever you feel overwhelmed, just remember that I'm right here, holding you in my heart."
+        </p>
+        
+        <button class="secret-btn" onclick="revealNote()">Click for a Hug</button>
+        <p id="hidden-note">I love you more than all the stars in the sky. Take a deep breath, Hania—everything is going to be okay. 🫂</p>
+    </div>
+
+    <script>
+        // Floating background hearts
+        function createBGHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('bg-heart');
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heart.style.fontSize = Math.random() * 15 + 10 + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createBGHeart, 400);
+
+        // Reveal Secret Message
+        function revealNote() {
+            const note = document.getElementById('hidden-note');
+            const btn = document.querySelector('.secret-btn');
+            note.style.display = 'block';
+            btn.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy 1st Month Muskaan 💖</title>
